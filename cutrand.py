@@ -8,8 +8,7 @@ left = wavelength - fp.tell()
 while left > 0:
 	cliplength = min(random.randint(1,100000), left)
 	sample = fp.readframes(cliplength)
-	cutpoint = len(sample)/2
-	cutpoint = cutpoint + cutpoint % 2
+	cutpoint = (cliplength / 2) * 2
 	print "cliplength: " + str(cliplength)
 	print "sample length: " + str(len(sample))
 	print "cutpoint = " + str(cutpoint)
