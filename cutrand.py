@@ -9,9 +9,6 @@ while left > 0:
 	cliplength = min(random.randint(1,100000), left)
 	sample = fp.readframes(cliplength)
 	cutpoint = (cliplength / 2) * 2
-	print "cliplength: " + str(cliplength)
-	print "sample length: " + str(len(sample))
-	print "cutpoint = " + str(cutpoint)
 	sample = sample[cutpoint:] + sample[:cutpoint]
 	fp2.writeframesraw(sample)
 	left = wavelength - fp.tell()
